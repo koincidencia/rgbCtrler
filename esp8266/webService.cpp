@@ -184,10 +184,12 @@ void WebServiceInit()
 	StartWebServer();
 	ip = IpToString(WiFi.localIP());
 	
-	if (!MDNS.begin(hostname.c_str())) {
+	if (!MDNS.begin(hostname.c_str())) 
+	{
 		Serial.println("Error setting up MDNS responder!");
 	}
-	else{
+	else 
+	{
 		Serial.println("MDNS responder initialized.");
 	}
 	MDNS.addService("http", "tcp", 80);

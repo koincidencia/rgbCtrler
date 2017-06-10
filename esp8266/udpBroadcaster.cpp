@@ -29,7 +29,7 @@ void UDPBroadcaster::BroadcastHandler(String hostname)
 		uint16_t destPort = String(packetBuffer).toInt();
 		
 		// send a reply, to the IP address and port that sent us the packet we received
-		String str = "NyihahaMuhaha-" + WiFi.localIP().toString() + "-" + hostname;
+		String str = "rgbCtrler-" + WiFi.localIP().toString() + "-" + hostname;
 		Serial.println("Sending back ip info: ");
 		Serial.println(str);
 		str.toCharArray(ipBuffer, ipBufferLength);

@@ -1,0 +1,9 @@
+*.o
+*.elf
+*.bin
+*.a
+*.xml
+*.d
+.vs/*
+__vm/*
+Debug/*

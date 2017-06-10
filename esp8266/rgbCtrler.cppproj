@@ -1,0 +1,1360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>7.0</ProjectVersion>
+    <ToolchainName>com.Atmel.ARMGCC.CPP</ToolchainName>
+    <ProjectGuid>{7b46d934-b832-4632-9e35-172b3b21f9fd}</ProjectGuid>
+    <avrdevice>AT90CAN128</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>CPP</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>sw</AssemblyName>
+    <Name>rgbCtrler</Name>
+    <RootNamespace>sw</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
+    <BootSegment>2</BootSegment>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <AsfFrameworkConfig>
+      <framework-data>
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.28.1" />
+        </dependencies>
+      </framework-data>
+    </AsfFrameworkConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <ArmGccCpp>
+        <armgcc.common.outputfiles.hex>True</armgcc.common.outputfiles.hex>
+        <armgcc.common.outputfiles.lss>True</armgcc.common.outputfiles.lss>
+        <armgcc.common.outputfiles.eep>True</armgcc.common.outputfiles.eep>
+        <armgcc.common.outputfiles.bin>True</armgcc.common.outputfiles.bin>
+        <armgcc.common.outputfiles.srec>True</armgcc.common.outputfiles.srec>
+        <armgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>__ESP8266_ESp8266__</Value>
+            <Value>__ESP8266_ESP8266__</Value>
+            <Value>ARDUINO=10803</Value>
+            <Value>ARDUINO_MAIN</Value>
+            <Value>F_CPU=80000000L</Value>
+            <Value>printf=iprintf</Value>
+            <Value>__ESP8266__</Value>
+            <Value>__ets__</Value>
+            <Value>ICACHE_FLASH</Value>
+            <Value>LWIP_OPEN_SRC</Value>
+            <Value>ARDUINO_ESP8266_NODEMCU</Value>
+            <Value>ARDUINO_ARCH_ESP8266</Value>
+          </ListValues>
+        </armgcc.compiler.symbols.DefSymbols>
+        <armgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266WiFi/src</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266WebServer/src</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/EEPROM</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266mDNS</Value>
+            <Value>D:/SW/Arduino/libraries</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries</Value>
+            <Value>C:/Users/kazy/Documents/Arduino/libraries</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/cores/esp8266</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/cores/esp8266/libb64</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/cores/esp8266/spiffs</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/cores/esp8266/umm_malloc</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/variants/nodemcu</Value>
+            <Value>../../../esp8266</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/tools/sdk/include</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/tools/sdk/lwip/include</Value>
+            <Value>{build.path}/core</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/xtensa-lx106-elf/include/c++/4.8.2</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/xtensa-lx106-elf/include/c++/4.8.2/xtensa-lx106-elf</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/xtensa-lx106-elf/include</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/lib/gcc/xtensa-lx106-elf/4.8.2/include</Value>
+          </ListValues>
+        </armgcc.compiler.directories.IncludePaths>
+        <armgcc.compiler.optimization.level>Optimize (-O1)</armgcc.compiler.optimization.level>
+        <armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <armgcc.compiler.optimization.DebugLevel>Maximum (-g3)</armgcc.compiler.optimization.DebugLevel>
+        <armgcc.compiler.warnings.AllWarnings>True</armgcc.compiler.warnings.AllWarnings>
+        <armgcccpp.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>__ESP8266_ESp8266__</Value>
+            <Value>__ESP8266_ESP8266__</Value>
+            <Value>ARDUINO=10803</Value>
+            <Value>ARDUINO_MAIN</Value>
+            <Value>F_CPU=80000000L</Value>
+            <Value>printf=iprintf</Value>
+            <Value>__ESP8266__</Value>
+            <Value>__ets__</Value>
+            <Value>ICACHE_FLASH</Value>
+            <Value>LWIP_OPEN_SRC</Value>
+            <Value>ARDUINO_ESP8266_NODEMCU</Value>
+            <Value>ARDUINO_ARCH_ESP8266</Value>
+          </ListValues>
+        </armgcccpp.compiler.symbols.DefSymbols>
+        <armgcccpp.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266WiFi/src</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266WebServer/src</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/EEPROM</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266mDNS</Value>
+            <Value>D:/SW/Arduino/libraries</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries</Value>
+            <Value>C:/Users/kazy/Documents/Arduino/libraries</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/cores/esp8266</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/cores/esp8266/libb64</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/cores/esp8266/spiffs</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/cores/esp8266/umm_malloc</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/variants/nodemcu</Value>
+            <Value>../../../esp8266</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/tools/sdk/include</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/tools/sdk/lwip/include</Value>
+            <Value>{build.path}/core</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/xtensa-lx106-elf/include/c++/4.8.2</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/xtensa-lx106-elf/include/c++/4.8.2/xtensa-lx106-elf</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/xtensa-lx106-elf/include</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/lib/gcc/xtensa-lx106-elf/4.8.2/include</Value>
+          </ListValues>
+        </armgcccpp.compiler.directories.IncludePaths>
+        <armgcccpp.compiler.optimization.level>Optimize (-O1)</armgcccpp.compiler.optimization.level>
+        <armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <armgcccpp.compiler.optimization.DebugLevel>Maximum (-g3)</armgcccpp.compiler.optimization.DebugLevel>
+        <armgcccpp.compiler.warnings.AllWarnings>True</armgcccpp.compiler.warnings.AllWarnings>
+        <armgcccpp.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </armgcccpp.linker.libraries.Libraries>
+        <armgcccpp.linker.libraries.LibrarySearchPaths>
+          <ListValues>
+            <Value>../cmsis/linkerScripts</Value>
+          </ListValues>
+        </armgcccpp.linker.libraries.LibrarySearchPaths>
+        <armgcccpp.linker.optimization.GarbageCollectUnusedSections>True</armgcccpp.linker.optimization.GarbageCollectUnusedSections>
+        <armgcccpp.linker.memorysettings.ExternalRAM />
+        <armgcccpp.linker.miscellaneous.LinkerFlags>-Tsamd21e18a_flash.ld</armgcccpp.linker.miscellaneous.LinkerFlags>
+        <armgcccpp.assembler.debugging.DebugLevel>Default (-g)</armgcccpp.assembler.debugging.DebugLevel>
+        <armgcccpp.preprocessingassembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\samd21\include</Value>
+            <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
+            <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
+            <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL</Value>
+          </ListValues>
+        </armgcccpp.preprocessingassembler.general.IncludePaths>
+        <armgcccpp.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</armgcccpp.preprocessingassembler.debugging.DebugLevel>
+      </ArmGccCpp>
+    </ToolchainSettings>
+    <VMSETTING_IncludePaths>C:/Program Files (x86)/Arduino/libraries;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/hardware/esp8266/1.6.5-947-g39819f0/libraries;C:/Users/kazy/Documents/Arduino/libraries;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/hardware/esp8266/1.6.5-947-g39819f0/cores/esp8266;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/hardware/esp8266/1.6.5-947-g39819f0/cores/esp8266/spiffs;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/hardware/esp8266/1.6.5-947-g39819f0/variants/nodemcu;../../../sw;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/hardware/esp8266/1.6.5-947-g39819f0/tools/sdk//include;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/1.20.0-26-gb404fb9-2/include;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/xtensa-lx106-elf/include;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/lib/gcc/xtensa-lx106-elf/4.8.2/include;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/lib/gcc/xtensa-lx106-elf/4.8.2/include/;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/hardware/esp8266/1.6.5-947-g39819f0/libraries/ESP8266WiFi/src;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/hardware/esp8266/1.6.5-947-g39819f0/libraries/ESP8266WebServer/src;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/hardware/esp8266/1.6.5-947-g39819f0/libraries/EEPROM;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/hardware/esp8266/1.6.5-947-g39819f0/libraries/EEPROM/utility;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/hardware/esp8266/1.6.5-947-g39819f0/libraries/ESP8266WebServer/src/utility;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/hardware/esp8266/1.6.5-947-g39819f0/libraries/ESP8266WiFi/src/utility;C:/Program Files (x86)/Atmel/Studio/7.0/Extensions/qt1uxkbv.xke/Micro Platforms/default/debuggers/VM_DBG;C:/Program Files (x86)/Atmel/Studio/7.0/Extensions/qt1uxkbv.xke/Micro Platforms/default/debuggers;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/ArduinoOTA;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/ArduinoOTA/utility;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/cores/esp8266;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/cores/esp8266/libb64;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/cores/esp8266/spiffs;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/cores/esp8266/umm_malloc;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/variants/nodemcu;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/tools/sdk/include;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/tools/sdk/lwip/include;{build.path}/core;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/xtensa-lx106-elf/include/c++/4.8.2;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/xtensa-lx106-elf/include/c++/4.8.2/xtensa-lx106-elf;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/xtensa-lx106-elf/include;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/lib/gcc/xtensa-lx106-elf/4.8.2/include;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266WiFi/src;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266mDNS;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266WebServer/src;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/EEPROM;C:/Users/kazy/AppData/Local/Temp/VMBuilds/sw/esp8266_nodemcuv2/core;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266mDNS/utility;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/EEPROM/utility;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266WebServer/src/utility;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266WiFi/src/utility;D:/SW/Arduino/libraries;../../../esp8266;</VMSETTING_IncludePaths>
+    <VisualMicroSettings>
+      <VisualMicroSettings>
+        <custom_esp8266_nodemcuv2_UploadSpeed>256000</custom_esp8266_nodemcuv2_UploadSpeed>
+        <arduino.upload.port>COM3</arduino.upload.port>
+        <custom_esp8266_nodemcuv2_CpuFrequency>160</custom_esp8266_nodemcuv2_CpuFrequency>
+        <arduino.board.name>esp8266_nodemcu</arduino.board.name>
+        <arduino.board.desc>NodeMCU 0.9 (ESP-12 Module)</arduino.board.desc>
+        <arduino.board.property_bag>name=NodeMCU 0.9 (ESP-12 Module)
+upload.tool=esptool
+upload.speed=115200
+upload.resetmethod=nodemcu
+upload.maximum_size=1044464
+upload.maximum_data_size=81920
+upload.wait_for_upload_port=true
+serial.disableDTR=true
+serial.disableRTS=true
+build.mcu=esp8266
+build.f_cpu=80000000L
+build.board=ESP8266_NODEMCU
+build.core=esp8266
+build.variant=nodemcu
+build.flash_mode=qio
+build.flash_size=4M
+build.flash_freq=40
+build.debug_port=
+build.debug_level=
+menu.CpuFrequency.80=80 MHz
+menu.CpuFrequency.80.build.f_cpu=80000000L
+menu.CpuFrequency.160=160 MHz
+menu.CpuFrequency.160.build.f_cpu=160000000L
+menu.UploadSpeed.115200=115200
+menu.UploadSpeed.115200.upload.speed=115200
+menu.UploadSpeed.9600=9600
+menu.UploadSpeed.9600.upload.speed=9600
+menu.UploadSpeed.57600=57600
+menu.UploadSpeed.57600.upload.speed=57600
+menu.UploadSpeed.256000.windows=256000
+menu.UploadSpeed.256000.upload.speed=256000
+menu.UploadSpeed.230400.linux=230400
+menu.UploadSpeed.230400.macosx=230400
+menu.UploadSpeed.230400.upload.speed=230400
+menu.UploadSpeed.460800.linux=460800
+menu.UploadSpeed.460800.macosx=460800
+menu.UploadSpeed.460800.upload.speed=460800
+menu.UploadSpeed.512000.windows=512000
+menu.UploadSpeed.512000.upload.speed=512000
+menu.UploadSpeed.921600=921600
+menu.UploadSpeed.921600.upload.speed=921600
+menu.FlashSize.4M3M=4M (3M SPIFFS)
+menu.FlashSize.4M3M.build.flash_size=4M
+menu.FlashSize.4M3M.build.flash_ld=eagle.flash.4m.ld
+menu.FlashSize.4M3M.build.spiffs_start=0x100000
+menu.FlashSize.4M3M.build.spiffs_end=0x3FB000
+menu.FlashSize.4M3M.build.spiffs_blocksize=8192
+menu.FlashSize.4M3M.build.spiffs_pagesize=256
+menu.FlashSize.4M1M=4M (1M SPIFFS)
+menu.FlashSize.4M1M.build.flash_size=4M
+menu.FlashSize.4M1M.build.flash_ld=eagle.flash.4m1m.ld
+menu.FlashSize.4M1M.build.spiffs_start=0x300000
+menu.FlashSize.4M1M.build.spiffs_end=0x3FB000
+menu.FlashSize.4M1M.build.spiffs_blocksize=8192
+menu.FlashSize.4M1M.build.spiffs_pagesize=256
+menu.UploadSpeed.256000=256000
+menu.UploadSpeed.512000=512000
+runtime.ide.path=D:\SW\Arduino\
+runtime.os=windows
+build.system.path=C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\system
+runtime.ide.version=10803
+target_package=esp8266
+target_platform=esp8266
+runtime.hardware.path=C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266
+originalid=nodemcu
+intellisense.tools.path={compiler.toolchain.path}
+intellisense.include.paths={runtime.tools.xtensa-lx106-elf-gcc.path}\xtensa-lx106-elf\include\c++\4.8.2;{runtime.tools.xtensa-lx106-elf-gcc.path}\xtensa-lx106-elf\include\c++\4.8.2\xtensa-lx106-elf;{runtime.tools.xtensa-lx106-elf-gcc.path}\xtensa-lx106-elf\include;{runtime.tools.xtensa-lx106-elf-gcc.path}\lib\gcc\xtensa-lx106-elf\4.8.2\include;{runtime.platform.path}\tools\sdk\include
+tools.wwwfiles.name=ESP8266 Sketch Data Upload
+tools.wwwfiles.ssh=false
+tools.wwwfiles.cmd.windows=ESP8266FSUpload.exe
+recipe.wwwfiles.upload.pattern="{vm.path}/{tools.wwwfiles.cmd}" -serial.port={serial.port} -build.path="{build.path}" -target_platform="{target_platform}" -runtime.tools.mkspiffs.path="{runtime.tools.mkspiffs.path}" -board.name="{name}" -upload.verbose={upload.verbose} -upload.resetmethod={upload.resetmethod} -upload.speed={upload.speed}  -platform.path="{platform.path}" -project.name="{project.name}" -project.path="{project.path}" -tools.esptool.cmd="{tools.esptool.cmd}" -runtime.tools.esptool.path="{runtime.tools.esptool.path}" -compiler.path="{compiler.path}" -build.spiffs_start="{build.spiffs_start}" -build.spiffs_end="{build.spiffs_end}" -build.spiffs_pagesize="{build.spiffs_pagesize}" -build.spiffs_blocksize="{build.spiffs_blocksize}" -network.password={network.password} -network.auth_upload={network.auth_upload} -network.port={network.port}
+tools.wwwfiles.cmd=ESP8266FSUpload.exe
+version=2.2.0
+compiler.warning_flags=-w
+compiler.warning_flags.none=-w
+compiler.warning_flags.default=
+compiler.warning_flags.more=-Wall
+compiler.warning_flags.all=-Wall -Wextra
+build.lwip_lib=-llwip_gcc
+build.lwip_flags=-DLWIP_OPEN_SRC
+compiler.path={runtime.tools.xtensa-lx106-elf-gcc.path}/bin/
+compiler.sdk.path={runtime.platform.path}/tools/sdk
+compiler.cpreprocessor.flags=-D__ets__ -DICACHE_FLASH -U__STRICT_ANSI__ "-I{compiler.sdk.path}/include" "-I{compiler.sdk.path}/lwip/include" "-I{build.path}/core"
+compiler.c.cmd=xtensa-lx106-elf-gcc
+compiler.c.flags=-c {compiler.warning_flags} -Os -g -Wpointer-arith -Wno-implicit-function-declaration -Wl,-EL -fno-inline-functions -nostdlib -mlongcalls -mtext-section-literals -falign-functions=4 -MMD -std=gnu99 -ffunction-sections -fdata-sections
+compiler.S.cmd=xtensa-lx106-elf-gcc
+compiler.S.flags=-c -g -x assembler-with-cpp -MMD -mlongcalls
+compiler.c.elf.flags=-g {compiler.warning_flags} -Os -nostdlib -Wl,--no-check-sections -u call_user_start -Wl,-static "-L{compiler.sdk.path}/lib" "-L{compiler.sdk.path}/ld" "-T{build.flash_ld}" -Wl,--gc-sections -Wl,-wrap,system_restart_local -Wl,-wrap,register_chipv6_phy
+compiler.c.elf.cmd=xtensa-lx106-elf-gcc
+compiler.c.elf.libs=-lm -lgcc -lhal -lphy -lpp -lnet80211 -lwpa -lcrypto -lmain -lwps -laxtls -lsmartconfig -lmesh -lwpa2 {build.lwip_lib} -lstdc++
+compiler.cpp.cmd=xtensa-lx106-elf-g++
+compiler.cpp.flags=-c {compiler.warning_flags} -Os -g -mlongcalls -mtext-section-literals -fno-exceptions -fno-rtti -falign-functions=4 -std=c++11 -MMD -ffunction-sections -fdata-sections
+compiler.as.cmd=xtensa-lx106-elf-as
+compiler.ar.cmd=xtensa-lx106-elf-ar
+compiler.ar.flags=cru
+compiler.elf2hex.cmd=esptool
+compiler.elf2hex.flags=
+compiler.size.cmd=xtensa-lx106-elf-size
+compiler.esptool.cmd=esptool.exe
+compiler.esptool.cmd.windows=esptool.exe
+build.extra_flags=-DESP8266
+compiler.c.extra_flags=
+compiler.c.elf.extra_flags=
+compiler.S.extra_flags=
+compiler.cpp.extra_flags=
+compiler.ar.extra_flags=
+compiler.objcopy.eep.extra_flags=
+compiler.elf2hex.extra_flags=
+recipe.c.o.pattern="{compiler.path}{compiler.c.cmd}" {compiler.cpreprocessor.flags} {compiler.c.flags} -DF_CPU={build.f_cpu} {build.lwip_flags} {build.debug_port} {build.debug_level} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} -DARDUINO_BOARD="{build.board}" {compiler.c.extra_flags} {build.extra_flags} {includes} "{source_file}" -o "{object_file}"
+recipe.cpp.o.pattern="{compiler.path}{compiler.cpp.cmd}" {compiler.cpreprocessor.flags} {compiler.cpp.flags} -DF_CPU={build.f_cpu} {build.lwip_flags} {build.debug_port} {build.debug_level} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} -DARDUINO_BOARD="{build.board}" {compiler.cpp.extra_flags} {build.extra_flags} {includes} "{source_file}" -o "{object_file}"
+recipe.S.o.pattern="{compiler.path}{compiler.c.cmd}" {compiler.cpreprocessor.flags} {compiler.S.flags} -DF_CPU={build.f_cpu} {build.lwip_flags} {build.debug_port} {build.debug_level} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} -DARDUINO_BOARD="{build.board}" {compiler.c.extra_flags} {build.extra_flags} {includes} "{source_file}" -o "{object_file}"
+recipe.ar.pattern="{compiler.path}{compiler.ar.cmd}" {compiler.ar.flags} {compiler.ar.extra_flags} "{archive_file_path}" "{object_file}"
+recipe.c.combine.pattern="{compiler.path}{compiler.c.elf.cmd}" {compiler.c.elf.flags} {compiler.c.elf.extra_flags} -o "{build.path}/{build.project_name}.elf" -Wl,--start-group {object_files} "{build.path}/{archive_file}" {compiler.c.elf.libs} -Wl,--end-group  "-L{build.path}"
+recipe.objcopy.eep.pattern=
+recipe.objcopy.hex.pattern="{runtime.tools.esptool.path}/{compiler.esptool.cmd}" -eo "{runtime.platform.path}/bootloaders/eboot/eboot.elf" -bo "{build.path}/{build.project_name}.bin" -bm {build.flash_mode} -bf {build.flash_freq} -bz {build.flash_size} -bs .text -bp 4096 -ec -eo "{build.path}/{build.project_name}.elf" -bs .irom0.text -bs .text -bs .data -bs .rodata -bc -ec
+recipe.output.tmp_file={build.project_name}.bin
+recipe.output.save_file={build.project_name}.{build.variant}.bin
+recipe.size.pattern="{compiler.path}{compiler.size.cmd}" -A "{build.path}/{build.project_name}.elf"
+recipe.size.regex=^(?:\.irom0\.text|\.text|\.data|\.rodata|)\s+([0-9]+).*
+recipe.size.regex.data=^(?:\.data|\.rodata|\.bss)\s+([0-9]+).*
+tools.esptool.cmd=esptool.exe
+tools.esptool.cmd.windows=esptool.exe
+tools.esptool.path={runtime.tools.esptool.path}
+tools.esptool.network_cmd=python.exe
+tools.esptool.network_cmd.windows=python.exe
+tools.esptool.upload.protocol=esp
+tools.esptool.upload.params.verbose=-vv
+tools.esptool.upload.params.quiet=
+tools.esptool.upload.pattern="{path}/{cmd}" {upload.verbose} -cd {upload.resetmethod} -cb {upload.speed} -cp "{serial.port}" -ca 0x00000 -cf "{build.path}/{build.project_name}.bin"
+tools.esptool.upload.network_pattern="{network_cmd}" "{runtime.platform.path}/tools/espota.py" -i "{serial.port}" -p "{network.port}" "--auth={network.password}" -f "{build.path}/{build.project_name}.bin"
+tools.mkspiffs.cmd=mkspiffs.exe
+tools.mkspiffs.cmd.windows=mkspiffs.exe
+tools.mkspiffs.path={runtime.tools.mkspiffs.path}
+vm.platform.root.path=C:\Program Files (x86)\Atmel\Studio\7.0\Extensions\qt1uxkbv.xke\Micro Platforms\arduino16x
+runtime.tools.esptool.path=C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\tools\esptool\0.4.9
+runtime.tools.esptool-0.4.9.path=C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\tools\esptool\0.4.9
+runtime.tools.xtensa-lx106-elf-gcc.path=C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\tools\xtensa-lx106-elf-gcc\1.20.0-26-gb404fb9-2
+runtime.tools.xtensa-lx106-elf-gcc-1.20.0-26-gb404fb9-2.path=C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\tools\xtensa-lx106-elf-gcc\1.20.0-26-gb404fb9-2
+runtime.tools.mkspiffs.path=C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\tools\mkspiffs\0.1.2
+runtime.tools.mkspiffs-0.1.2.path=C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\tools\mkspiffs\0.1.2
+runtime.tools.arduinoOTA.path=D:\SW\Arduino\hardware\tools\avr
+runtime.tools.arduinoOTA-1.1.1.path=D:\SW\Arduino\hardware\tools\avr
+runtime.tools.avrdude.path=D:\SW\Arduino\hardware\tools\avr
+runtime.tools.avrdude-6.3.0-arduino2.path=D:\SW\Arduino\hardware\tools\avr
+runtime.tools.avr-gcc.path=D:\SW\Arduino\hardware\tools\avr
+runtime.tools.avr-gcc-4.9.2-atmel3.5.3-arduino.path=D:\SW\Arduino\hardware\tools\avr
+runtime.vm.boardinfo.id=esp8266_nodemcu
+runtime.vm.boardinfo.name=esp8266_nodemcu
+runtime.vm.boardinfo.desc=NodeMCU 0.9 (ESP-12 Module)
+runtime.vm.boardinfo.src_location=C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0
+ide.hint=For all platforms that use Board Manager
+ide.location.key=Arduino16x
+ide.location.ide.winreg=Arduino 1.6.x Application
+ide.location.sketchbook.winreg=Arduino 1.6.x Sketchbook
+ide.location.sketchbook.preferences=sketchbook.path
+ide.default.revision_name=1.6.9
+ide.default.version=10609
+ide.default.package=arduino
+ide.default.platform=avr
+ide.multiplatform=true
+ide.includes=arduino.h
+ide.exe_name=arduino
+ide.platformswithoutpackage=false
+ide.includes.fallback=wprogram.h
+ide.extension=ino
+ide.extension.fallback=pde
+ide.versionGTEQ=160
+ide.exe=arduino.exe
+ide.hosts=atmel
+ide.url=http://arduino.cc/en/Main/Software
+ide.help.reference.path=reference
+ide.help.reference.path2=reference\www.arduino.cc\en\Reference
+ide.help.reference.serial=reference\www.arduino.cc\en\Serial
+vm.debug=true
+software=ARDUINO
+ssh.user.name=root
+ssh.user.default.password=arduino
+ssh.host.wwwfiles.path=/www/sd
+build.working_directory={runtime.ide.path}
+ide.location.preferences.portable={runtime.ide.path}\portable
+ide.location.preferences=%VM_APPDATA_LOCAL%\arduino15\preferences.txt
+ide.location.preferences_fallback=%VM_APPDATA_ROAMING%\arduino15\preferences.txt
+ide.location.contributions=%VM_APPDATA_LOCAL%\arduino15
+ide.location.contributions_fallback=%VM_APPDATA_ROAMING%\arduino15
+ide.contributions.boards.allow=true
+ide.contributions.boards.ignore_unless_rewrite_found=true
+ide.contributions.libraries.allow=true
+ide.contributions.boards.support.urls.wiki=https://github.com/arduino/Arduino/wiki/Unofficial-list-of-3rd-party-boards-support-urls
+ide.create_platforms_from_boardsTXT.teensy=build.core
+ide.appid=arduino16x
+location.sketchbook=C:\Users\kazy\Documents\Arduino
+build.core.path=C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266
+vm.core.include=arduino.h
+vm.boardsource.path=C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0
+runtime.platform.path=C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0
+vm.platformname.name=esp8266
+build.arch=ESP8266
+</arduino.board.property_bag>
+        <arduino.build.mcu>esp8266</arduino.build.mcu>
+        <arduino.build.f_cpu>80000000L</arduino.build.f_cpu>
+        <arduino.build.core>esp8266</arduino.build.core>
+        <arduino.upload.speed>115200</arduino.upload.speed>
+        <arduino.upload.maximum_size>1044464</arduino.upload.maximum_size>
+        <visualmicro.application.name>arduino16x</visualmicro.application.name>
+        <visualmicro.package.name>esp8266</visualmicro.package.name>
+        <visualmicro.platform.name>esp8266</visualmicro.platform.name>
+      </VisualMicroSettings>
+    </VisualMicroSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <ArmGccCpp>
+        <armgcc.common.outputfiles.hex>True</armgcc.common.outputfiles.hex>
+        <armgcc.common.outputfiles.lss>True</armgcc.common.outputfiles.lss>
+        <armgcc.common.outputfiles.eep>True</armgcc.common.outputfiles.eep>
+        <armgcc.common.outputfiles.bin>True</armgcc.common.outputfiles.bin>
+        <armgcc.common.outputfiles.srec>True</armgcc.common.outputfiles.srec>
+        <armgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>__ESP8266_ESp8266__</Value>
+            <Value>__ESP8266_ESP8266__</Value>
+            <Value>_VMDEBUG=1</Value>
+            <Value>ARDUINO=10803</Value>
+            <Value>ARDUINO_MAIN</Value>
+            <Value>F_CPU=80000000L</Value>
+            <Value>printf=iprintf</Value>
+            <Value>__ESP8266__</Value>
+            <Value>__ets__</Value>
+            <Value>ICACHE_FLASH</Value>
+            <Value>LWIP_OPEN_SRC</Value>
+            <Value>ARDUINO_ESP8266_NODEMCU</Value>
+            <Value>ARDUINO_ARCH_ESP8266</Value>
+          </ListValues>
+        </armgcc.compiler.symbols.DefSymbols>
+        <armgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266WiFi/src</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266WebServer/src</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/EEPROM</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266mDNS</Value>
+            <Value>D:/SW/Arduino/libraries</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries</Value>
+            <Value>C:/Users/kazy/Documents/Arduino/libraries</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/cores/esp8266</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/cores/esp8266/libb64</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/cores/esp8266/spiffs</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/cores/esp8266/umm_malloc</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/variants/nodemcu</Value>
+            <Value>../../../esp8266</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/tools/sdk/include</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/tools/sdk/lwip/include</Value>
+            <Value>{build.path}/core</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/xtensa-lx106-elf/include/c++/4.8.2</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/xtensa-lx106-elf/include/c++/4.8.2/xtensa-lx106-elf</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/xtensa-lx106-elf/include</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/lib/gcc/xtensa-lx106-elf/4.8.2/include</Value>
+          </ListValues>
+        </armgcc.compiler.directories.IncludePaths>
+        <armgcc.compiler.optimization.level>Optimize (-O1)</armgcc.compiler.optimization.level>
+        <armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <armgcc.compiler.optimization.DebugLevel>Maximum (-g3)</armgcc.compiler.optimization.DebugLevel>
+        <armgcc.compiler.warnings.AllWarnings>True</armgcc.compiler.warnings.AllWarnings>
+        <armgcccpp.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>__ESP8266_ESp8266__</Value>
+            <Value>__ESP8266_ESP8266__</Value>
+            <Value>_VMDEBUG=1</Value>
+            <Value>ARDUINO=10803</Value>
+            <Value>ARDUINO_MAIN</Value>
+            <Value>F_CPU=80000000L</Value>
+            <Value>printf=iprintf</Value>
+            <Value>__ESP8266__</Value>
+            <Value>__ets__</Value>
+            <Value>ICACHE_FLASH</Value>
+            <Value>LWIP_OPEN_SRC</Value>
+            <Value>ARDUINO_ESP8266_NODEMCU</Value>
+            <Value>ARDUINO_ARCH_ESP8266</Value>
+          </ListValues>
+        </armgcccpp.compiler.symbols.DefSymbols>
+        <armgcccpp.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266WiFi/src</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266WebServer/src</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/EEPROM</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266mDNS</Value>
+            <Value>D:/SW/Arduino/libraries</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries</Value>
+            <Value>C:/Users/kazy/Documents/Arduino/libraries</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/cores/esp8266</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/cores/esp8266/libb64</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/cores/esp8266/spiffs</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/cores/esp8266/umm_malloc</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/variants/nodemcu</Value>
+            <Value>../../../esp8266</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/tools/sdk/include</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/tools/sdk/lwip/include</Value>
+            <Value>{build.path}/core</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/xtensa-lx106-elf/include/c++/4.8.2</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/xtensa-lx106-elf/include/c++/4.8.2/xtensa-lx106-elf</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/xtensa-lx106-elf/include</Value>
+            <Value>C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/lib/gcc/xtensa-lx106-elf/4.8.2/include</Value>
+          </ListValues>
+        </armgcccpp.compiler.directories.IncludePaths>
+        <armgcccpp.compiler.optimization.level>Optimize (-O1)</armgcccpp.compiler.optimization.level>
+        <armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <armgcccpp.compiler.optimization.DebugLevel>Maximum (-g3)</armgcccpp.compiler.optimization.DebugLevel>
+        <armgcccpp.compiler.warnings.AllWarnings>True</armgcccpp.compiler.warnings.AllWarnings>
+        <armgcccpp.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </armgcccpp.linker.libraries.Libraries>
+        <armgcccpp.linker.libraries.LibrarySearchPaths>
+          <ListValues>
+            <Value>../cmsis/linkerScripts</Value>
+          </ListValues>
+        </armgcccpp.linker.libraries.LibrarySearchPaths>
+        <armgcccpp.linker.optimization.GarbageCollectUnusedSections>True</armgcccpp.linker.optimization.GarbageCollectUnusedSections>
+        <armgcccpp.linker.memorysettings.ExternalRAM />
+        <armgcccpp.linker.miscellaneous.LinkerFlags>-Tsamd21e18a_flash.ld</armgcccpp.linker.miscellaneous.LinkerFlags>
+        <armgcccpp.assembler.debugging.DebugLevel>Default (-g)</armgcccpp.assembler.debugging.DebugLevel>
+        <armgcccpp.preprocessingassembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL\samd21\include</Value>
+            <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel</Value>
+            <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\CMSIS\Include</Value>
+            <Value>%24(ToolchainDir)\..\..\CMSIS_Atmel\Device\ATMEL</Value>
+          </ListValues>
+        </armgcccpp.preprocessingassembler.general.IncludePaths>
+        <armgcccpp.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</armgcccpp.preprocessingassembler.debugging.DebugLevel>
+      </ArmGccCpp>
+    </ToolchainSettings>
+    <VMSETTING_IncludePaths>C:/Program Files (x86)/Arduino/libraries;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/hardware/esp8266/1.6.5-947-g39819f0/libraries;C:/Users/kazy/Documents/Arduino/libraries;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/hardware/esp8266/1.6.5-947-g39819f0/cores/esp8266;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/hardware/esp8266/1.6.5-947-g39819f0/cores/esp8266/spiffs;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/hardware/esp8266/1.6.5-947-g39819f0/variants/nodemcu;../../../sw;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/hardware/esp8266/1.6.5-947-g39819f0/tools/sdk//include;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/1.20.0-26-gb404fb9-2/include;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/xtensa-lx106-elf/include;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/lib/gcc/xtensa-lx106-elf/4.8.2/include;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/lib/gcc/xtensa-lx106-elf/4.8.2/include/;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/hardware/esp8266/1.6.5-947-g39819f0/libraries/ESP8266WiFi/src;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/hardware/esp8266/1.6.5-947-g39819f0/libraries/ESP8266WebServer/src;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/hardware/esp8266/1.6.5-947-g39819f0/libraries/EEPROM;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/hardware/esp8266/1.6.5-947-g39819f0/libraries/EEPROM/utility;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/hardware/esp8266/1.6.5-947-g39819f0/libraries/ESP8266WebServer/src/utility;C:/Users/kazy/AppData/Roaming/arduino15/packages/esp8266/hardware/esp8266/1.6.5-947-g39819f0/libraries/ESP8266WiFi/src/utility;C:/Program Files (x86)/Atmel/Studio/7.0/Extensions/qt1uxkbv.xke/Micro Platforms/default/debuggers/VM_DBG;C:/Program Files (x86)/Atmel/Studio/7.0/Extensions/qt1uxkbv.xke/Micro Platforms/default/debuggers;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/ArduinoOTA;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/ArduinoOTA/utility;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/cores/esp8266;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/cores/esp8266/libb64;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/cores/esp8266/spiffs;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/cores/esp8266/umm_malloc;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/variants/nodemcu;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/tools/sdk/include;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/tools/sdk/lwip/include;{build.path}/core;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/xtensa-lx106-elf/include/c++/4.8.2;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/xtensa-lx106-elf/include/c++/4.8.2/xtensa-lx106-elf;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/xtensa-lx106-elf/include;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/tools/xtensa-lx106-elf-gcc/1.20.0-26-gb404fb9-2/lib/gcc/xtensa-lx106-elf/4.8.2/include;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266WiFi/src;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266mDNS;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266WebServer/src;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/EEPROM;C:/Users/kazy/AppData/Local/Temp/VMBuilds/sw/esp8266_nodemcuv2/core;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266mDNS/utility;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/EEPROM/utility;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266WebServer/src/utility;C:/Users/kazy/AppData/Local/arduino15/packages/esp8266/hardware/esp8266/2.3.0/libraries/ESP8266WiFi/src/utility;D:/SW/Arduino/libraries;../../../esp8266;</VMSETTING_IncludePaths>
+    <VisualMicroSettings>
+      <VisualMicroSettings>
+        <custom_esp8266_nodemcuv2_UploadSpeed>256000</custom_esp8266_nodemcuv2_UploadSpeed>
+        <arduino.upload.port>COM3</arduino.upload.port>
+        <custom_esp8266_nodemcuv2_CpuFrequency>160</custom_esp8266_nodemcuv2_CpuFrequency>
+        <arduino.board.name>esp8266_nodemcu</arduino.board.name>
+        <arduino.board.desc>NodeMCU 0.9 (ESP-12 Module)</arduino.board.desc>
+        <arduino.board.property_bag>name=NodeMCU 0.9 (ESP-12 Module)
+upload.tool=esptool
+upload.speed=115200
+upload.resetmethod=nodemcu
+upload.maximum_size=1044464
+upload.maximum_data_size=81920
+upload.wait_for_upload_port=true
+serial.disableDTR=true
+serial.disableRTS=true
+build.mcu=esp8266
+build.f_cpu=80000000L
+build.board=ESP8266_NODEMCU
+build.core=esp8266
+build.variant=nodemcu
+build.flash_mode=qio
+build.flash_size=4M
+build.flash_freq=40
+build.debug_port=
+build.debug_level=
+menu.CpuFrequency.80=80 MHz
+menu.CpuFrequency.80.build.f_cpu=80000000L
+menu.CpuFrequency.160=160 MHz
+menu.CpuFrequency.160.build.f_cpu=160000000L
+menu.UploadSpeed.115200=115200
+menu.UploadSpeed.115200.upload.speed=115200
+menu.UploadSpeed.9600=9600
+menu.UploadSpeed.9600.upload.speed=9600
+menu.UploadSpeed.57600=57600
+menu.UploadSpeed.57600.upload.speed=57600
+menu.UploadSpeed.256000.windows=256000
+menu.UploadSpeed.256000.upload.speed=256000
+menu.UploadSpeed.230400.linux=230400
+menu.UploadSpeed.230400.macosx=230400
+menu.UploadSpeed.230400.upload.speed=230400
+menu.UploadSpeed.460800.linux=460800
+menu.UploadSpeed.460800.macosx=460800
+menu.UploadSpeed.460800.upload.speed=460800
+menu.UploadSpeed.512000.windows=512000
+menu.UploadSpeed.512000.upload.speed=512000
+menu.UploadSpeed.921600=921600
+menu.UploadSpeed.921600.upload.speed=921600
+menu.FlashSize.4M3M=4M (3M SPIFFS)
+menu.FlashSize.4M3M.build.flash_size=4M
+menu.FlashSize.4M3M.build.flash_ld=eagle.flash.4m.ld
+menu.FlashSize.4M3M.build.spiffs_start=0x100000
+menu.FlashSize.4M3M.build.spiffs_end=0x3FB000
+menu.FlashSize.4M3M.build.spiffs_blocksize=8192
+menu.FlashSize.4M3M.build.spiffs_pagesize=256
+menu.FlashSize.4M1M=4M (1M SPIFFS)
+menu.FlashSize.4M1M.build.flash_size=4M
+menu.FlashSize.4M1M.build.flash_ld=eagle.flash.4m1m.ld
+menu.FlashSize.4M1M.build.spiffs_start=0x300000
+menu.FlashSize.4M1M.build.spiffs_end=0x3FB000
+menu.FlashSize.4M1M.build.spiffs_blocksize=8192
+menu.FlashSize.4M1M.build.spiffs_pagesize=256
+menu.UploadSpeed.256000=256000
+menu.UploadSpeed.512000=512000
+runtime.ide.path=D:\SW\Arduino\
+runtime.os=windows
+build.system.path=C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\system
+runtime.ide.version=10803
+target_package=esp8266
+target_platform=esp8266
+runtime.hardware.path=C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266
+originalid=nodemcu
+intellisense.tools.path={compiler.toolchain.path}
+intellisense.include.paths={runtime.tools.xtensa-lx106-elf-gcc.path}\xtensa-lx106-elf\include\c++\4.8.2;{runtime.tools.xtensa-lx106-elf-gcc.path}\xtensa-lx106-elf\include\c++\4.8.2\xtensa-lx106-elf;{runtime.tools.xtensa-lx106-elf-gcc.path}\xtensa-lx106-elf\include;{runtime.tools.xtensa-lx106-elf-gcc.path}\lib\gcc\xtensa-lx106-elf\4.8.2\include;{runtime.platform.path}\tools\sdk\include
+tools.wwwfiles.name=ESP8266 Sketch Data Upload
+tools.wwwfiles.ssh=false
+tools.wwwfiles.cmd.windows=ESP8266FSUpload.exe
+recipe.wwwfiles.upload.pattern="{vm.path}/{tools.wwwfiles.cmd}" -serial.port={serial.port} -build.path="{build.path}" -target_platform="{target_platform}" -runtime.tools.mkspiffs.path="{runtime.tools.mkspiffs.path}" -board.name="{name}" -upload.verbose={upload.verbose} -upload.resetmethod={upload.resetmethod} -upload.speed={upload.speed}  -platform.path="{platform.path}" -project.name="{project.name}" -project.path="{project.path}" -tools.esptool.cmd="{tools.esptool.cmd}" -runtime.tools.esptool.path="{runtime.tools.esptool.path}" -compiler.path="{compiler.path}" -build.spiffs_start="{build.spiffs_start}" -build.spiffs_end="{build.spiffs_end}" -build.spiffs_pagesize="{build.spiffs_pagesize}" -build.spiffs_blocksize="{build.spiffs_blocksize}" -network.password={network.password} -network.auth_upload={network.auth_upload} -network.port={network.port}
+tools.wwwfiles.cmd=ESP8266FSUpload.exe
+version=2.2.0
+compiler.warning_flags=-w
+compiler.warning_flags.none=-w
+compiler.warning_flags.default=
+compiler.warning_flags.more=-Wall
+compiler.warning_flags.all=-Wall -Wextra
+build.lwip_lib=-llwip_gcc
+build.lwip_flags=-DLWIP_OPEN_SRC
+compiler.path={runtime.tools.xtensa-lx106-elf-gcc.path}/bin/
+compiler.sdk.path={runtime.platform.path}/tools/sdk
+compiler.cpreprocessor.flags=-D__ets__ -DICACHE_FLASH -U__STRICT_ANSI__ "-I{compiler.sdk.path}/include" "-I{compiler.sdk.path}/lwip/include" "-I{build.path}/core"
+compiler.c.cmd=xtensa-lx106-elf-gcc
+compiler.c.flags=-c {compiler.warning_flags} -Os -g -Wpointer-arith -Wno-implicit-function-declaration -Wl,-EL -fno-inline-functions -nostdlib -mlongcalls -mtext-section-literals -falign-functions=4 -MMD -std=gnu99 -ffunction-sections -fdata-sections
+compiler.S.cmd=xtensa-lx106-elf-gcc
+compiler.S.flags=-c -g -x assembler-with-cpp -MMD -mlongcalls
+compiler.c.elf.flags=-g {compiler.warning_flags} -Os -nostdlib -Wl,--no-check-sections -u call_user_start -Wl,-static "-L{compiler.sdk.path}/lib" "-L{compiler.sdk.path}/ld" "-T{build.flash_ld}" -Wl,--gc-sections -Wl,-wrap,system_restart_local -Wl,-wrap,register_chipv6_phy
+compiler.c.elf.cmd=xtensa-lx106-elf-gcc
+compiler.c.elf.libs=-lm -lgcc -lhal -lphy -lpp -lnet80211 -lwpa -lcrypto -lmain -lwps -laxtls -lsmartconfig -lmesh -lwpa2 {build.lwip_lib} -lstdc++
+compiler.cpp.cmd=xtensa-lx106-elf-g++
+compiler.cpp.flags=-c {compiler.warning_flags} -Os -g -mlongcalls -mtext-section-literals -fno-exceptions -fno-rtti -falign-functions=4 -std=c++11 -MMD -ffunction-sections -fdata-sections
+compiler.as.cmd=xtensa-lx106-elf-as
+compiler.ar.cmd=xtensa-lx106-elf-ar
+compiler.ar.flags=cru
+compiler.elf2hex.cmd=esptool
+compiler.elf2hex.flags=
+compiler.size.cmd=xtensa-lx106-elf-size
+compiler.esptool.cmd=esptool.exe
+compiler.esptool.cmd.windows=esptool.exe
+build.extra_flags=-DESP8266
+compiler.c.extra_flags=
+compiler.c.elf.extra_flags=
+compiler.S.extra_flags=
+compiler.cpp.extra_flags=
+compiler.ar.extra_flags=
+compiler.objcopy.eep.extra_flags=
+compiler.elf2hex.extra_flags=
+recipe.c.o.pattern="{compiler.path}{compiler.c.cmd}" {compiler.cpreprocessor.flags} {compiler.c.flags} -DF_CPU={build.f_cpu} {build.lwip_flags} {build.debug_port} {build.debug_level} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} -DARDUINO_BOARD="{build.board}" {compiler.c.extra_flags} {build.extra_flags} {includes} "{source_file}" -o "{object_file}"
+recipe.cpp.o.pattern="{compiler.path}{compiler.cpp.cmd}" {compiler.cpreprocessor.flags} {compiler.cpp.flags} -DF_CPU={build.f_cpu} {build.lwip_flags} {build.debug_port} {build.debug_level} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} -DARDUINO_BOARD="{build.board}" {compiler.cpp.extra_flags} {build.extra_flags} {includes} "{source_file}" -o "{object_file}"
+recipe.S.o.pattern="{compiler.path}{compiler.c.cmd}" {compiler.cpreprocessor.flags} {compiler.S.flags} -DF_CPU={build.f_cpu} {build.lwip_flags} {build.debug_port} {build.debug_level} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DARDUINO_ARCH_{build.arch} -DARDUINO_BOARD="{build.board}" {compiler.c.extra_flags} {build.extra_flags} {includes} "{source_file}" -o "{object_file}"
+recipe.ar.pattern="{compiler.path}{compiler.ar.cmd}" {compiler.ar.flags} {compiler.ar.extra_flags} "{archive_file_path}" "{object_file}"
+recipe.c.combine.pattern="{compiler.path}{compiler.c.elf.cmd}" {compiler.c.elf.flags} {compiler.c.elf.extra_flags} -o "{build.path}/{build.project_name}.elf" -Wl,--start-group {object_files} "{build.path}/{archive_file}" {compiler.c.elf.libs} -Wl,--end-group  "-L{build.path}"
+recipe.objcopy.eep.pattern=
+recipe.objcopy.hex.pattern="{runtime.tools.esptool.path}/{compiler.esptool.cmd}" -eo "{runtime.platform.path}/bootloaders/eboot/eboot.elf" -bo "{build.path}/{build.project_name}.bin" -bm {build.flash_mode} -bf {build.flash_freq} -bz {build.flash_size} -bs .text -bp 4096 -ec -eo "{build.path}/{build.project_name}.elf" -bs .irom0.text -bs .text -bs .data -bs .rodata -bc -ec
+recipe.output.tmp_file={build.project_name}.bin
+recipe.output.save_file={build.project_name}.{build.variant}.bin
+recipe.size.pattern="{compiler.path}{compiler.size.cmd}" -A "{build.path}/{build.project_name}.elf"
+recipe.size.regex=^(?:\.irom0\.text|\.text|\.data|\.rodata|)\s+([0-9]+).*
+recipe.size.regex.data=^(?:\.data|\.rodata|\.bss)\s+([0-9]+).*
+tools.esptool.cmd=esptool.exe
+tools.esptool.cmd.windows=esptool.exe
+tools.esptool.path={runtime.tools.esptool.path}
+tools.esptool.network_cmd=python.exe
+tools.esptool.network_cmd.windows=python.exe
+tools.esptool.upload.protocol=esp
+tools.esptool.upload.params.verbose=-vv
+tools.esptool.upload.params.quiet=
+tools.esptool.upload.pattern="{path}/{cmd}" {upload.verbose} -cd {upload.resetmethod} -cb {upload.speed} -cp "{serial.port}" -ca 0x00000 -cf "{build.path}/{build.project_name}.bin"
+tools.esptool.upload.network_pattern="{network_cmd}" "{runtime.platform.path}/tools/espota.py" -i "{serial.port}" -p "{network.port}" "--auth={network.password}" -f "{build.path}/{build.project_name}.bin"
+tools.mkspiffs.cmd=mkspiffs.exe
+tools.mkspiffs.cmd.windows=mkspiffs.exe
+tools.mkspiffs.path={runtime.tools.mkspiffs.path}
+vm.platform.root.path=C:\Program Files (x86)\Atmel\Studio\7.0\Extensions\qt1uxkbv.xke\Micro Platforms\arduino16x
+runtime.tools.esptool.path=C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\tools\esptool\0.4.9
+runtime.tools.esptool-0.4.9.path=C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\tools\esptool\0.4.9
+runtime.tools.xtensa-lx106-elf-gcc.path=C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\tools\xtensa-lx106-elf-gcc\1.20.0-26-gb404fb9-2
+runtime.tools.xtensa-lx106-elf-gcc-1.20.0-26-gb404fb9-2.path=C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\tools\xtensa-lx106-elf-gcc\1.20.0-26-gb404fb9-2
+runtime.tools.mkspiffs.path=C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\tools\mkspiffs\0.1.2
+runtime.tools.mkspiffs-0.1.2.path=C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\tools\mkspiffs\0.1.2
+runtime.tools.arduinoOTA.path=D:\SW\Arduino\hardware\tools\avr
+runtime.tools.arduinoOTA-1.1.1.path=D:\SW\Arduino\hardware\tools\avr
+runtime.tools.avrdude.path=D:\SW\Arduino\hardware\tools\avr
+runtime.tools.avrdude-6.3.0-arduino2.path=D:\SW\Arduino\hardware\tools\avr
+runtime.tools.avr-gcc.path=D:\SW\Arduino\hardware\tools\avr
+runtime.tools.avr-gcc-4.9.2-atmel3.5.3-arduino.path=D:\SW\Arduino\hardware\tools\avr
+runtime.vm.boardinfo.id=esp8266_nodemcu
+runtime.vm.boardinfo.name=esp8266_nodemcu
+runtime.vm.boardinfo.desc=NodeMCU 0.9 (ESP-12 Module)
+runtime.vm.boardinfo.src_location=C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0
+ide.hint=For all platforms that use Board Manager
+ide.location.key=Arduino16x
+ide.location.ide.winreg=Arduino 1.6.x Application
+ide.location.sketchbook.winreg=Arduino 1.6.x Sketchbook
+ide.location.sketchbook.preferences=sketchbook.path
+ide.default.revision_name=1.6.9
+ide.default.version=10609
+ide.default.package=arduino
+ide.default.platform=avr
+ide.multiplatform=true
+ide.includes=arduino.h
+ide.exe_name=arduino
+ide.platformswithoutpackage=false
+ide.includes.fallback=wprogram.h
+ide.extension=ino
+ide.extension.fallback=pde
+ide.versionGTEQ=160
+ide.exe=arduino.exe
+ide.hosts=atmel
+ide.url=http://arduino.cc/en/Main/Software
+ide.help.reference.path=reference
+ide.help.reference.path2=reference\www.arduino.cc\en\Reference
+ide.help.reference.serial=reference\www.arduino.cc\en\Serial
+vm.debug=true
+software=ARDUINO
+ssh.user.name=root
+ssh.user.default.password=arduino
+ssh.host.wwwfiles.path=/www/sd
+build.working_directory={runtime.ide.path}
+ide.location.preferences.portable={runtime.ide.path}\portable
+ide.location.preferences=%VM_APPDATA_LOCAL%\arduino15\preferences.txt
+ide.location.preferences_fallback=%VM_APPDATA_ROAMING%\arduino15\preferences.txt
+ide.location.contributions=%VM_APPDATA_LOCAL%\arduino15
+ide.location.contributions_fallback=%VM_APPDATA_ROAMING%\arduino15
+ide.contributions.boards.allow=true
+ide.contributions.boards.ignore_unless_rewrite_found=true
+ide.contributions.libraries.allow=true
+ide.contributions.boards.support.urls.wiki=https://github.com/arduino/Arduino/wiki/Unofficial-list-of-3rd-party-boards-support-urls
+ide.create_platforms_from_boardsTXT.teensy=build.core
+ide.appid=arduino16x
+location.sketchbook=C:\Users\kazy\Documents\Arduino
+build.core.path=C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266
+vm.core.include=arduino.h
+vm.boardsource.path=C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0
+runtime.platform.path=C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0
+vm.platformname.name=esp8266
+build.arch=ESP8266
+</arduino.board.property_bag>
+        <arduino.build.mcu>esp8266</arduino.build.mcu>
+        <arduino.build.f_cpu>80000000L</arduino.build.f_cpu>
+        <arduino.build.core>esp8266</arduino.build.core>
+        <arduino.upload.speed>115200</arduino.upload.speed>
+        <arduino.upload.maximum_size>1044464</arduino.upload.maximum_size>
+        <visualmicro.application.name>arduino16x</visualmicro.application.name>
+        <visualmicro.package.name>esp8266</visualmicro.package.name>
+        <visualmicro.platform.name>esp8266</visualmicro.platform.name>
+      </VisualMicroSettings>
+    </VisualMicroSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ArduinoOTA\keywords.txt">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ArduinoOTA\keywords.txt</Link>
+    </None>
+    <None Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ArduinoOTA\library.properties">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ArduinoOTA\library.properties</Link>
+    </None>
+    <None Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\EEPROM\keywords.txt">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\EEPROM\keywords.txt</Link>
+    </None>
+    <None Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\EEPROM\library.properties">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\EEPROM\library.properties</Link>
+    </None>
+    <None Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266mDNS\keywords.txt">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266mDNS\keywords.txt</Link>
+    </None>
+    <None Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WebServer\keywords.txt">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WebServer\keywords.txt</Link>
+    </None>
+    <None Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WebServer\library.properties">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WebServer\library.properties</Link>
+    </None>
+    <None Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\keywords.txt">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WiFi\keywords.txt</Link>
+    </None>
+    <None Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\library.properties">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WiFi\library.properties</Link>
+    </None>
+    <None Include="rgbCtrler.ino">
+      <SubType>compile</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\" />
+    <Folder Include="src\_micro-api-readonly\" />
+    <Folder Include="src\_micro-api-readonly\core\" />
+    <Folder Include="src\_micro-api-readonly\core\libb64\" />
+    <Folder Include="src\_micro-api-readonly\core\spiffs\" />
+    <Folder Include="src\_micro-api-readonly\core\umm_malloc\" />
+    <Folder Include="src\_micro-api-readonly\libraries\" />
+    <Folder Include="src\_micro-api-readonly\libraries\ArduinoOTA\" />
+    <Folder Include="src\_micro-api-readonly\libraries\EEPROM\" />
+    <Folder Include="src\_micro-api-readonly\libraries\ESP8266mDNS\" />
+    <Folder Include="src\_micro-api-readonly\libraries\ESP8266WebServer\" />
+    <Folder Include="src\_micro-api-readonly\libraries\ESP8266WebServer\src\" />
+    <Folder Include="src\_micro-api-readonly\libraries\ESP8266WebServer\src\detail\" />
+    <Folder Include="src\_micro-api-readonly\libraries\ESP8266WiFi\" />
+    <Folder Include="src\_micro-api-readonly\libraries\ESP8266WiFi\src\" />
+    <Folder Include="src\_micro-api-readonly\libraries\ESP8266WiFi\src\include\" />
+    <Folder Include="src\_micro-api-readonly\variants\" />
+    <Folder Include="src\_micro-api-readonly\variants\nodemcu\" />
+    <Folder Include="sw\" />
+    <Folder Include="sw\src\" />
+    <Folder Include="sw\src\_micro-api-readonly\" />
+    <Folder Include="sw\src\_micro-api-readonly\core\" />
+    <Folder Include="sw\src\_micro-api-readonly\core\libb64\" />
+    <Folder Include="sw\src\_micro-api-readonly\core\spiffs\" />
+    <Folder Include="sw\src\_micro-api-readonly\core\umm_malloc\" />
+    <Folder Include="sw\src\_micro-api-readonly\libraries\" />
+    <Folder Include="sw\src\_micro-api-readonly\libraries\ArduinoOTA\" />
+    <Folder Include="sw\src\_micro-api-readonly\libraries\EEPROM\" />
+    <Folder Include="sw\src\_micro-api-readonly\libraries\ESP8266mDNS\" />
+    <Folder Include="sw\src\_micro-api-readonly\libraries\ESP8266WebServer\" />
+    <Folder Include="sw\src\_micro-api-readonly\libraries\ESP8266WebServer\src\" />
+    <Folder Include="sw\src\_micro-api-readonly\libraries\ESP8266WebServer\src\detail\" />
+    <Folder Include="sw\src\_micro-api-readonly\libraries\ESP8266WiFi\" />
+    <Folder Include="sw\src\_micro-api-readonly\libraries\ESP8266WiFi\src\" />
+    <Folder Include="sw\src\_micro-api-readonly\libraries\ESP8266WiFi\src\include\" />
+    <Folder Include="sw\src\_micro-api-readonly\variants\" />
+    <Folder Include="sw\src\_micro-api-readonly\variants\nodemcu\" />
+    <Folder Include="__vm\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\abi.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\abi.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\Arduino.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\Arduino.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\base64.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\base64.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\base64.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\base64.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\binary.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\binary.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\cbuf.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\cbuf.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\cbuf.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\cbuf.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\Client.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\Client.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\cont.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\cont.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\cont.S">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\cont.S</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\cont_util.c">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\cont_util.c</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\core_esp8266_eboot_command.c">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\core_esp8266_eboot_command.c</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\core_esp8266_features.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\core_esp8266_features.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\core_esp8266_flash_utils.c">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\core_esp8266_flash_utils.c</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\core_esp8266_i2s.c">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\core_esp8266_i2s.c</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\core_esp8266_main.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\core_esp8266_main.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\core_esp8266_noniso.c">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\core_esp8266_noniso.c</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\core_esp8266_phy.c">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\core_esp8266_phy.c</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\core_esp8266_postmortem.c">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\core_esp8266_postmortem.c</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\core_esp8266_si2c.c">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\core_esp8266_si2c.c</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\core_esp8266_timer.c">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\core_esp8266_timer.c</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\core_esp8266_wiring.c">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\core_esp8266_wiring.c</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\core_esp8266_wiring_analog.c">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\core_esp8266_wiring_analog.c</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\core_esp8266_wiring_digital.c">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\core_esp8266_wiring_digital.c</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\core_esp8266_wiring_pulse.c">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\core_esp8266_wiring_pulse.c</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\core_esp8266_wiring_pwm.c">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\core_esp8266_wiring_pwm.c</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\core_esp8266_wiring_shift.c">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\core_esp8266_wiring_shift.c</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\core_version.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\core_version.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\debug.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\debug.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\debug.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\debug.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\eboot_command.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\eboot_command.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\Esp.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\Esp.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\Esp.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\Esp.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\esp8266_peri.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\esp8266_peri.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\flash_utils.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\flash_utils.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\FS.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\FS.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\FS.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\FS.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\FSImpl.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\FSImpl.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\HardwareSerial.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\HardwareSerial.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\HardwareSerial.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\HardwareSerial.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\heap.c">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\heap.c</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\i2s.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\i2s.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\interrupts.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\interrupts.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\IPAddress.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\IPAddress.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\IPAddress.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\IPAddress.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\libb64\cdecode.c">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\libb64\cdecode.c</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\libb64\cdecode.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\libb64\cdecode.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\libb64\cencode.c">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\libb64\cencode.c</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\libb64\cencode.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\libb64\cencode.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\libc_replacements.c">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\libc_replacements.c</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\md5.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\md5.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\MD5Builder.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\MD5Builder.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\MD5Builder.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\MD5Builder.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\pgmspace.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\pgmspace.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\pgmspace.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\pgmspace.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\Print.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\Print.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\Print.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\Print.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\Printable.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\Printable.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\Schedule.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\Schedule.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\Schedule.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\Schedule.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\Server.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\Server.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\sigma_delta.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\sigma_delta.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\spiffs\spiffs.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\spiffs\spiffs.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\spiffs\spiffs_cache.c">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\spiffs\spiffs_cache.c</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\spiffs\spiffs_check.c">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\spiffs\spiffs_check.c</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\spiffs\spiffs_config.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\spiffs\spiffs_config.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\spiffs\spiffs_gc.c">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\spiffs\spiffs_gc.c</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\spiffs\spiffs_hydrogen.c">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\spiffs\spiffs_hydrogen.c</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\spiffs\spiffs_nucleus.c">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\spiffs\spiffs_nucleus.c</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\spiffs\spiffs_nucleus.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\spiffs\spiffs_nucleus.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\spiffs_api.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\spiffs_api.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\spiffs_api.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\spiffs_api.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\spiffs_hal.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\spiffs_hal.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\stdlib_noniso.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\stdlib_noniso.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\Stream.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\Stream.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\Stream.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\Stream.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\StreamString.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\StreamString.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\StreamString.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\StreamString.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\time.c">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\time.c</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\Tone.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\Tone.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\twi.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\twi.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\uart.c">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\uart.c</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\uart.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\uart.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\Udp.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\Udp.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\umm_malloc\umm_malloc.c">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\umm_malloc\umm_malloc.c</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\umm_malloc\umm_malloc.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\umm_malloc\umm_malloc.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\umm_malloc\umm_malloc_cfg.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\umm_malloc\umm_malloc_cfg.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\Updater.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\Updater.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\Updater.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\Updater.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\user_config.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\user_config.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\WCharacter.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\WCharacter.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\wiring_private.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\wiring_private.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\WMath.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\WMath.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\WString.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\WString.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\cores\esp8266\WString.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\core\WString.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ArduinoOTA\ArduinoOTA.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ArduinoOTA\ArduinoOTA.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ArduinoOTA\ArduinoOTA.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ArduinoOTA\ArduinoOTA.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\EEPROM\EEPROM.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\EEPROM\EEPROM.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\EEPROM\EEPROM.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\EEPROM\EEPROM.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266mDNS\ESP8266mDNS.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266mDNS\ESP8266mDNS.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266mDNS\ESP8266mDNS.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266mDNS\ESP8266mDNS.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WebServer\src\detail\RequestHandler.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WebServer\src\detail\RequestHandler.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WebServer\src\detail\RequestHandlersImpl.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WebServer\src\detail\RequestHandlersImpl.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WebServer\src\ESP8266WebServer.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WebServer\src\ESP8266WebServer.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WebServer\src\ESP8266WebServer.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WebServer\src\ESP8266WebServer.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WebServer\src\Parsing.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WebServer\src\Parsing.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\src\ESP8266WiFi.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WiFi\src\ESP8266WiFi.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\src\ESP8266WiFi.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WiFi\src\ESP8266WiFi.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\src\ESP8266WiFiAP.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WiFi\src\ESP8266WiFiAP.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\src\ESP8266WiFiAP.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WiFi\src\ESP8266WiFiAP.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\src\ESP8266WiFiGeneric.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WiFi\src\ESP8266WiFiGeneric.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\src\ESP8266WiFiGeneric.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WiFi\src\ESP8266WiFiGeneric.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\src\ESP8266WiFiMulti.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WiFi\src\ESP8266WiFiMulti.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\src\ESP8266WiFiMulti.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WiFi\src\ESP8266WiFiMulti.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\src\ESP8266WiFiScan.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WiFi\src\ESP8266WiFiScan.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\src\ESP8266WiFiScan.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WiFi\src\ESP8266WiFiScan.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\src\ESP8266WiFiSTA.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WiFi\src\ESP8266WiFiSTA.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\src\ESP8266WiFiSTA.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WiFi\src\ESP8266WiFiSTA.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\src\ESP8266WiFiType.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WiFi\src\ESP8266WiFiType.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\src\include\ClientContext.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WiFi\src\include\ClientContext.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\src\include\slist.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WiFi\src\include\slist.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\src\include\ssl.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WiFi\src\include\ssl.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\src\include\UdpContext.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WiFi\src\include\UdpContext.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\src\include\wl_definitions.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WiFi\src\include\wl_definitions.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\src\WiFiClient.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WiFi\src\WiFiClient.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\src\WiFiClient.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WiFi\src\WiFiClient.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\src\WiFiClientSecure.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WiFi\src\WiFiClientSecure.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\src\WiFiClientSecure.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WiFi\src\WiFiClientSecure.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\src\WiFiServer.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WiFi\src\WiFiServer.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\src\WiFiServer.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WiFi\src\WiFiServer.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\src\WiFiUdp.cpp">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WiFi\src\WiFiUdp.cpp</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\libraries\ESP8266WiFi\src\WiFiUdp.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\libraries\ESP8266WiFi\src\WiFiUdp.h</Link>
+    </Compile>
+    <Compile Include="C:\Users\kazy\AppData\Local\arduino15\packages\esp8266\hardware\esp8266\2.3.0\variants\nodemcu\pins_arduino.h">
+      <SubType>compile</SubType>
+      <Link>sw\src\_micro-api-readonly\variants\nodemcu\pins_arduino.h</Link>
+    </Compile>
+    <Compile Include="rgbController.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="rgbController.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="udpBroadcaster.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="udpBroadcaster.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="webService.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="webService.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="__vm\.esp8266.vsarduino.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="__vm\.sw.vsarduino.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>

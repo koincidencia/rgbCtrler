@@ -53,7 +53,7 @@
 #define EEPROM_ADDR_HOSTNAME_START	200
 #define EEPROM_ADDR_MODE			255
 
-#define REQ_ARGS        		4
+#define REQ_ARGS        			4
 
 #define AP_MODE						0x55
 #define STA_MODE					0xAA

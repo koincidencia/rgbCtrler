@@ -11,6 +11,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.chiralcode.colorpicker.ColorPicker;
@@ -76,6 +77,7 @@ public class ColorPickingActivity extends AppCompatActivity {
                 setDeviceNameDialog();
                 return true;
             case R.id.opt_wifi_sta:
+                setStaMode();
                 return true;
             case R.id.opt_wifi_ap:
                 setApMode();
@@ -87,6 +89,7 @@ public class ColorPickingActivity extends AppCompatActivity {
 
     protected void setDeviceNameDialog() {
         final EditText input = new EditText(this);
+        input.setHint("Device name");
         input.setInputType(InputType.TYPE_CLASS_TEXT);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -99,6 +102,43 @@ public class ColorPickingActivity extends AppCompatActivity {
                 String devName =  input.getText().toString();
                 rgbCtrler.SendHostname(devName, getApplicationContext());
                 rgbCtrler.GetHostname();
+                finish();
+                dialog.dismiss();
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.show();
+    }
+
+    protected void setStaMode() {
+        LinearLayout layout = new LinearLayout(this);
+        layout.setOrientation(LinearLayout.VERTICAL);
+
+        final EditText ssidEdit = new EditText(this);
+        ssidEdit.setHint("SSID");
+        ssidEdit.setInputType(InputType.TYPE_CLASS_TEXT);
+        layout.addView(ssidEdit);
+
+        final EditText passwdEdit = new EditText(this);
+        passwdEdit.setHint("Password");
+        passwdEdit.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        layout.addView(passwdEdit);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Set device to STA mode");
+        builder.setView(layout);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                rgbCtrler.SendSTAInfo(ssidEdit.getText().toString(),
+                        passwdEdit.getText().toString(),
+                        getApplicationContext());
+                rgbCtrler.SetSTAMode(getApplicationContext());
                 finish();
                 dialog.dismiss();
             }

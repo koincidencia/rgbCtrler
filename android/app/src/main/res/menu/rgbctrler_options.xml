@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/dev_name"
+        android:title="@string/opt_dev_name" />
+    <item android:id="@+id/wifi_sta"
+        android:title="@string/opt_wifi_settings" />
+    <item android:id="@+id/wifi_ap"
+        android:title="@string/opt_wifi_ap" />
+</menu>

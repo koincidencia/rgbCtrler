@@ -135,7 +135,7 @@ public class DeviceSelectionActivity extends AppCompatActivity {
 
     @Override
     public void onStart() {
-        arrayAdapter.clear();
+        clearList();
         listeningThread.start();
         discoveryTimer = new Timer();
         discoveryTimer.schedule(new DiscoveryTask(), 0, DISCOVERY_PERIOD);
@@ -157,7 +157,7 @@ public class DeviceSelectionActivity extends AppCompatActivity {
             runOnUiThread(new Runnable() {
                               @Override
                               public void run() {
-                                  arrayAdapter.clear();
+                                  clearList();
                               }
                           });
             sendBroadcast(String.valueOf(PORT_RECEIVE));
@@ -194,4 +194,9 @@ public class DeviceSelectionActivity extends AppCompatActivity {
         return InetAddress.getByAddress(quads);
     }
 
+    void clearList() {
+        deviceHostnames.clear();
+        deviceInetAddrs.clear();
+        arrayAdapter.notifyDataSetChanged();
+    }
 }

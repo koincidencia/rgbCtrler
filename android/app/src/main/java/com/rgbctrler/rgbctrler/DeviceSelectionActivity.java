@@ -18,8 +18,12 @@ import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
+import java.net.SocketTimeoutException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.Vector;
 
 public class DeviceSelectionActivity extends AppCompatActivity {
@@ -27,11 +31,14 @@ public class DeviceSelectionActivity extends AppCompatActivity {
     protected String TAG = "DeviceSelectionActivity";
     protected int PORT_BROADCAST = 2390;
     protected int PORT_RECEIVE = 12345;
-    protected int SOCKET_TIMEOUT = 1000;
+    protected int RECEIVE_TIMEOUT = 100;
+    protected int DISCOVERY_PERIOD = 5000;
+    Timer discoveryTimer;
     protected DatagramSocket socket;
     protected Vector<InetAddress> deviceInetAddrs = new Vector<>();
     protected List<String> deviceHostnames = new ArrayList<String>();
     protected ArrayAdapter<String> arrayAdapter;
+    protected Thread listeningThread;
 
     private ListView lv;
 
@@ -62,17 +69,104 @@ public class DeviceSelectionActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        // Create thread
+        listeningThread = new Thread(new Runnable() {
+            public void run() {
+                try {
+                    //Keep a socket open to listen to all the UDP trafic that is destined for this port
+                    socket = new DatagramSocket(PORT_RECEIVE, InetAddress.getByName("0.0.0.0"));
+                    socket.setBroadcast(true);
+
+                    while (!Thread.interrupted()) {
+                        Log.i(TAG, "Ready to receive broadcast packets!");
+
+                        //Receive a packet
+                        byte[] recvBuf = new byte[15000];
+                        DatagramPacket packet = new DatagramPacket(recvBuf, recvBuf.length);
+                        try {
+                            socket.setSoTimeout(RECEIVE_TIMEOUT);
+                            socket.receive(packet);
+                            //Packet received
+                            Log.i(TAG, "Packet received from: " + packet.getAddress().getHostAddress());
+                            String data = new String(packet.getData()).trim();
+                            Log.i(TAG, "Packet received; data: " + data);
+
+                            //Parse data
+                            final String[] strArr = data.split("-");
+
+                            //Add device IP to storage if data is valid
+                            if (strArr[0].equals("rgbCtrler")) {
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        try {
+                                            InetAddress addr = InetAddress.getByName(strArr[1]);    //get ipaddr
+                                            deviceInetAddrs.add(addr);
+                                            deviceHostnames.add(strArr[2]);
+                                            arrayAdapter.notifyDataSetChanged();
+                                        }catch(IOException ex) {
+                                            Log.i(TAG, "Oops " + ex.getMessage());
+                                        }
+                                    }
+                                });
+                            }
+                        } catch (SocketTimeoutException ex) {
+                            //NOP
+                        } catch (Exception ex) {
+                            throw ex;
+                        }
+                    }
+                    Log.i(TAG, "Thread interrupted");
+                    if (socket != null) {
+                        socket.close();
+                    }
+                } catch (Exception ex) {
+                    Log.i(TAG, "Oops: " + ex.getMessage());
+                    if (socket != null) {
+                        socket.close();
+                    }
+                }
+            }
+        });
+
+        getSupportActionBar().setTitle("Device selection");
     }
 
-    protected void searchDevices(View view) {
-        Log.i(TAG, "SerachDevices");
-        sendBroadcast(String.valueOf(PORT_RECEIVE));
-        receiveAnswers();
+    @Override
+    public void onStart() {
+        arrayAdapter.clear();
+        listeningThread.start();
+        discoveryTimer = new Timer();
+        discoveryTimer.schedule(new DiscoveryTask(), 0, DISCOVERY_PERIOD);
+        super.onStart();
+    }
+
+    @Override
+    public void onStop() {
+        listeningThread.interrupt();
+        while(listeningThread.isAlive());
+        discoveryTimer.cancel();
+        discoveryTimer.purge();
+        super.onStop();
+    }
+
+    class DiscoveryTask extends TimerTask {
+        @Override
+        public void run() {
+            runOnUiThread(new Runnable() {
+                              @Override
+                              public void run() {
+                                  arrayAdapter.clear();
+                              }
+                          });
+            sendBroadcast(String.valueOf(PORT_RECEIVE));
+        }
     }
 
     protected void sendBroadcast(String messageStr) {
         // Hack Prevent crash (sending should be done using an async task)
-        StrictMode.ThreadPolicy policy = new   StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
         try {
@@ -88,51 +182,6 @@ public class DeviceSelectionActivity extends AppCompatActivity {
         }
     }
 
-    protected void receiveAnswers()
-    {
-        try {
-            //Keep a socket open to listen to all the UDP trafic that is destined for this port
-            socket = new DatagramSocket(PORT_RECEIVE, InetAddress.getByName("0.0.0.0"));
-            socket.setBroadcast(true);
-            socket.setSoTimeout(SOCKET_TIMEOUT);
-            arrayAdapter.clear();
-
-            while (true) {
-                Log.i(TAG, "Ready to receive broadcast packets!");
-
-                //Receive a packet
-                byte[] recvBuf = new byte[15000];
-                DatagramPacket packet = new DatagramPacket(recvBuf, recvBuf.length);
-                socket.receive(packet);
-                socket.setSoTimeout(SOCKET_TIMEOUT);
-
-                //Packet received
-                Log.i(TAG, "Packet received from: " + packet.getAddress().getHostAddress());
-                String data = new String(packet.getData()).trim();
-                Log.i(TAG, "Packet received; data: " + data);
-
-                //Parse data
-                String[] strArr = data.split("-");
-
-                //Add device IP to storage if data is valid
-
-                if (strArr[0].equals("rgbCtrler")) {
-                    try {
-                        InetAddress addr = InetAddress.getByName(strArr[1]);    //get ipaddr
-                        deviceInetAddrs.add(addr);
-                        deviceHostnames.add(strArr[2]);
-                        arrayAdapter.notifyDataSetChanged();
-                    }catch(IOException ex) {
-                        Log.i(TAG, "Oops " + ex.getMessage());
-                    }
-                }
-            }
-        } catch (IOException ex) {
-            Log.i(TAG, "Oops, timeout and " + ex.getMessage());
-            socket.close();
-        }
-    }
-
     InetAddress getBroadcastAddress() throws IOException {
         WifiManager wifi = (WifiManager) getApplicationContext().getApplicationContext().getSystemService(WIFI_SERVICE);
         DhcpInfo dhcp = wifi.getDhcpInfo();
@@ -144,4 +193,5 @@ public class DeviceSelectionActivity extends AppCompatActivity {
             quads[k] = (byte) ((broadcast >> k * 8) & 0xFF);
         return InetAddress.getByAddress(quads);
     }
+
 }

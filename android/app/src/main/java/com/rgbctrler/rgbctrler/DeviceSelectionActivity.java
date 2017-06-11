@@ -134,7 +134,7 @@ public class DeviceSelectionActivity extends AppCompatActivity {
     }
 
     InetAddress getBroadcastAddress() throws IOException {
-        WifiManager wifi = (WifiManager) getSystemService(WIFI_SERVICE);
+        WifiManager wifi = (WifiManager) getApplicationContext().getApplicationContext().getSystemService(WIFI_SERVICE);
         DhcpInfo dhcp = wifi.getDhcpInfo();
         // handle null somehow
 

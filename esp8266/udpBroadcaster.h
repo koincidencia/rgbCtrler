@@ -14,7 +14,7 @@
 
 class UDPBroadcaster{
 	private:
-		uint16_t port = 2390;
+		static const uint16_t port = 2390;
 		WiFiUDP udp;
 		static const int packetBufferLength = 256;
 		static const int ipBufferLength = 256;

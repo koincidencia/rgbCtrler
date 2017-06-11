@@ -168,7 +168,9 @@ void WebServiceInit()
 	rgbControllerInit();
 	
 	delay(1000);
+#ifndef USE_INTERRUPT
 	CheckUserButton();
+#endif
 	
 	if(mode == AP_MODE)
 	{
@@ -182,10 +184,12 @@ void WebServiceInit()
 	StartWebServer();
 	ip = IpToString(WiFi.localIP());
 	
-	if (!MDNS.begin(hostname.c_str())) {
+	if (!MDNS.begin(hostname.c_str())) 
+	{
 		Serial.println("Error setting up MDNS responder!");
 	}
-	else{
+	else 
+	{
 		Serial.println("MDNS responder initialized.");
 	}
 	MDNS.addService("http", "tcp", 80);
@@ -328,6 +332,8 @@ void WebServerRGBCallback()
 	httpServer.send(HTTP_OK);
 }
 
+// This function checks the user button. If it is hold down for more than 
+// 2secs the module will fall back to AP mode.
 void CheckUserButton()
 {
 	if(digitalRead(INTERRUPT_PIN) == LOW)

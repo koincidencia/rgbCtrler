@@ -10,39 +10,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.rgbctrler.rgbctrler.ColorPickingActivity">
 
-
-    <LinearLayout
-        android:orientation="vertical"
+    <com.chiralcode.colorpicker.ColorPicker
+        android:id="@+id/colorPicker"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <com.chiralcode.colorpicker.ColorPicker
-            android:id="@+id/colorPicker"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"/>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <Button
-                android:text="SETUP"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/sendButton"
-                android:layout_gravity="bottom"
-                android:onClick="setup"
-                android:layout_weight="1" />
-
-        </LinearLayout>
-    </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </RelativeLayout>
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"/>
 
 </RelativeLayout>

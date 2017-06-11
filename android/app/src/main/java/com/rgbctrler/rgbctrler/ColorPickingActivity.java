@@ -20,6 +20,7 @@ import java.util.List;
 public class ColorPickingActivity extends AppCompatActivity {
     protected RGBCtrler rgbCtrler;
     protected ColorPicker colorPicker;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +38,28 @@ public class ColorPickingActivity extends AppCompatActivity {
                 rgbCtrler.SendColor(color, colorPicker.getContext());
             }
         });
+
+        getSupportActionBar().setTitle(rgbCtrler.hostname);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -74,6 +97,8 @@ public class ColorPickingActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 String devName =  input.getText().toString();
                 rgbCtrler.SendHostname(devName, getApplicationContext());
+                rgbCtrler.GetHostname();
+                finish();
                 dialog.dismiss();
             }
         });

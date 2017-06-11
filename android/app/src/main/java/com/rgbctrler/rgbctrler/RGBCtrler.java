@@ -113,7 +113,6 @@ public class RGBCtrler implements Serializable {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-
                     }
                 },
                 new Response.ErrorListener() {

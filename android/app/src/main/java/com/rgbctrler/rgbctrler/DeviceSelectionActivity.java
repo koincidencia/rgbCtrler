@@ -116,7 +116,7 @@ public class DeviceSelectionActivity extends AppCompatActivity {
 
                 //Add device IP to storage if data is valid
 
-                if (strArr[0].equals("NyihahaMuhaha")) {
+                if (strArr[0].equals("rgbCtrler")) {
                     try {
                         InetAddress addr = InetAddress.getByName(strArr[1]);    //get ipaddr
                         deviceInetAddrs.add(addr);

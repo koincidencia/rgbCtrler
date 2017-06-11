@@ -78,6 +78,7 @@ public class ColorPickingActivity extends AppCompatActivity {
             case R.id.opt_wifi_sta:
                 return true;
             case R.id.opt_wifi_ap:
+                setApMode();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -90,7 +91,7 @@ public class ColorPickingActivity extends AppCompatActivity {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Device name setup");
-        builder.setMessage("Alert message to be shown");
+        builder.setMessage("Enter the desired device name!");
         builder.setView(input);
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
@@ -110,4 +111,26 @@ public class ColorPickingActivity extends AppCompatActivity {
         });
         builder.show();
     }
+
+    protected void setApMode() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Set device to AP mode");
+        builder.setMessage("Do you really want to set the device to AP mode?");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                rgbCtrler.SetAPMode(getApplicationContext());
+                finish();
+                dialog.dismiss();
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.show();
+    }
+
 }
